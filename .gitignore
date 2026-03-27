@@ -8,3 +8,4 @@ build/
 dist/
 *.spec
 .DS_Store
+data/ui_screenshot*.png

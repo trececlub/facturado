@@ -132,6 +132,38 @@ pyinstaller --noconfirm --windowed --name FacturadoStickerStudio main.py
 
 El ejecutable quedara en `dist/FacturadoStickerStudio/`.
 
+## Distribucion desde GitHub (recomendado)
+
+El repositorio incluye workflow de GitHub Actions en:
+
+- `.github/workflows/windows-release.yml`
+
+Que hace lo siguiente:
+
+- Compila la app en `windows-latest`
+- Empaqueta en `FacturadoStickerStudio-windows.zip`
+- Publica artefacto descargable
+- Si el push es un tag `v*`, crea release con el ZIP adjunto
+
+### Como publicar una nueva version para descarga
+
+1. Sube cambios a `main`.
+2. Crea y sube un tag de version:
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+3. Ve a **GitHub > Releases** y descarga `FacturadoStickerStudio-windows.zip`.
+
+### Como instalar en cualquier PC Windows
+
+1. Descargar el ZIP desde Releases.
+2. Descomprimir en una carpeta local (por ejemplo `C:\\FacturadoStickerStudio`).
+3. Ejecutar `FacturadoStickerStudio.exe`.
+4. Editar `config/app_config.json` (junto al ejecutable) con el nombre de la impresora Honeywell.
+
 ## Limites actuales del MVP
 
 - La impresion de imagen (foto) en ZPL se maneja como placeholder en el motor actual.
