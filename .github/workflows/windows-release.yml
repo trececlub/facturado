@@ -51,35 +51,50 @@ jobs:
           choco install innosetup --no-progress -y
 
       - name: Build installer
+        continue-on-error: true
         shell: pwsh
         run: |
           & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer\FacturadoStickerStudio.iss
 
       - name: Upload artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: FacturadoStickerStudio-windows
           path: |
             FacturadoStickerStudio-windows.zip
             installer_output/FacturadoStickerStudio-Setup.exe
+          if-no-files-found: warn
 
       - name: Create GitHub release
-        if: startsWith(github.ref, 'refs/tags/v')
+        if: always() && startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
-          files: |
-            FacturadoStickerStudio-windows.zip
-            installer_output/FacturadoStickerStudio-Setup.exe
+          files: FacturadoStickerStudio-windows.zip
           generate_release_notes: true
 
+      - name: Attach installer to versioned release (optional)
+        if: always() && startsWith(github.ref, 'refs/tags/v') && hashFiles('installer_output/FacturadoStickerStudio-Setup.exe') != ''
+        uses: softprops/action-gh-release@v2
+        with:
+          files: installer_output/FacturadoStickerStudio-Setup.exe
+
       - name: Update rolling latest release
-        if: github.ref == 'refs/heads/main'
+        if: always() && github.ref == 'refs/heads/main'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: latest
           name: latest
           prerelease: true
           make_latest: false
-          files: |
-            FacturadoStickerStudio-windows.zip
-            installer_output/FacturadoStickerStudio-Setup.exe
+          files: FacturadoStickerStudio-windows.zip
+
+      - name: Attach installer to latest release (optional)
+        if: always() && github.ref == 'refs/heads/main' && hashFiles('installer_output/FacturadoStickerStudio-Setup.exe') != ''
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: latest
+          prerelease: true
+          make_latest: false
+          files: installer_output/FacturadoStickerStudio-Setup.exe
