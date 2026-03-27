@@ -44,7 +44,10 @@
     "y_mm": 15,
     "w_mm": 28,
     "h_mm": 26,
-    "border_color": "#a7b5c9"
+    "border_color": "#a7b5c9",
+    "print_real_image": true,
+    "threshold": 150,
+    "invert": false
   },
   "barcode": {
     "enabled": true,
@@ -59,6 +62,7 @@
     "enabled": true,
     "x_mm": 88,
     "y_mm": 30,
-    "size_mm": 8
+    "size_mm": 8,
+    "scale": 4
   }
 }

@@ -2,12 +2,20 @@
   "app_name": "Facturado Sticker Studio",
   "default_template": "templates/corporate_100x60.json",
   "history_file": "data/print_history.json",
+  "queue_file": "data/print_queue.json",
   "records_file": "data/records.json",
   "zpl_output_dir": "data/zpl_exports",
   "printer": {
     "interface": "usb",
     "default_name": "",
     "network_host": "",
-    "network_port": 9100
+    "network_port": 9100,
+    "darkness": 15,
+    "speed": 3,
+    "offset_x_mm": 0,
+    "offset_y_mm": 0,
+    "retries": 2,
+    "retry_delay_sec": 1.0,
+    "simulate_only": false
   }
 }

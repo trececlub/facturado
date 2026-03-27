@@ -43,7 +43,20 @@ def load_config() -> dict[str, Any]:
     runtime = _runtime_root()
     cfg["default_template"] = str((runtime / template_rel).resolve())
     cfg["history_file"] = str((runtime / cfg["history_file"]).resolve())
+    cfg["queue_file"] = str((runtime / cfg.get("queue_file", "data/print_queue.json")).resolve())
     cfg["records_file"] = str((runtime / cfg["records_file"]).resolve())
     cfg["zpl_output_dir"] = str((runtime / cfg["zpl_output_dir"]).resolve())
 
     return cfg
+
+
+def load_raw_config() -> dict[str, Any]:
+    config_path = _ensure_runtime_copy("config/app_config.json")
+    with config_path.open("r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def save_raw_config(config: dict[str, Any]) -> None:
+    config_path = _ensure_runtime_copy("config/app_config.json")
+    with config_path.open("w", encoding="utf-8") as f:
+        json.dump(config, f, indent=2, ensure_ascii=False)
