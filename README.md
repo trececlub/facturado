@@ -7,6 +7,10 @@ Aplicacion local para Windows orientada a la impresion de stickers corporativos 
 - Releases: [https://github.com/trececlub/facturado/releases](https://github.com/trececlub/facturado/releases)
 - Ultimo ZIP ejecutable: [Descargar FacturadoStickerStudio-windows.zip](https://github.com/trececlub/facturado/releases/latest/download/FacturadoStickerStudio-windows.zip)
 
+## Screenshot
+
+![Screenshot interfaz Facturado Sticker Studio](assets/screenshot_ui.png)
+
 ## Enfoque de seguridad y cumplimiento
 
 - Esta solucion esta diseniada para uso corporativo interno (activos, acceso interno, inventario, identificacion interna).
