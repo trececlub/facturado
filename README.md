@@ -2,6 +2,11 @@
 
 Aplicacion local para Windows orientada a la impresion de stickers corporativos internos en impresoras termicas como Honeywell PC42t Plus, sin depender de BarTender.
 
+## Descarga directa (Windows)
+
+- Releases: [https://github.com/trececlub/facturado/releases](https://github.com/trececlub/facturado/releases)
+- Ultimo ZIP ejecutable: [Descargar FacturadoStickerStudio-windows.zip](https://github.com/trececlub/facturado/releases/latest/download/FacturadoStickerStudio-windows.zip)
+
 ## Enfoque de seguridad y cumplimiento
 
 - Esta solucion esta diseniada para uso corporativo interno (activos, acceso interno, inventario, identificacion interna).
