@@ -3,6 +3,8 @@ name: Build Windows App
 on:
   workflow_dispatch:
   push:
+    branches:
+      - "main"
     tags:
       - "v*"
 
@@ -69,3 +71,15 @@ jobs:
             FacturadoStickerStudio-windows.zip
             installer_output/FacturadoStickerStudio-Setup.exe
           generate_release_notes: true
+
+      - name: Update rolling latest release
+        if: github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: latest
+          prerelease: true
+          make_latest: false
+          files: |
+            FacturadoStickerStudio-windows.zip
+            installer_output/FacturadoStickerStudio-Setup.exe
