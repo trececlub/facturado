@@ -1,0 +1,4 @@
+nombre,apellido,cargo,id_interno,fecha,sede,observaciones,barcode,qr
+Laura,Diaz,Operaciones,EMP-001,2026-03-27,Bogota,Turno A,EMP001-20260327,EMP-001|Bogota|2026-03-27
+Carlos,Ruiz,Inventario,EMP-002,2026-03-27,Medellin,Activo fijo,EMP002-20260327,EMP-002|Medellin|2026-03-27
+Marta,Lopez,Logistica,EMP-003,2026-03-27,Cali,Planta 2,EMP003-20260327,EMP-003|Cali|2026-03-27

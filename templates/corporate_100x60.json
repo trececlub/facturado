@@ -1,0 +1,64 @@
+{
+  "name": "Corporate 100x60",
+  "width_mm": 100,
+  "height_mm": 60,
+  "dpi": 203,
+  "preview": {
+    "rounded_corners": true,
+    "corner_radius_px": 16,
+    "background": "#ffffff"
+  },
+  "header": {
+    "x_mm": 2,
+    "y_mm": 2,
+    "w_mm": 96,
+    "h_mm": 10,
+    "bg_color": "#0f4c81",
+    "text_color": "#ffffff",
+    "subtitle_color": "#d6e6f8",
+    "company_name": "FACTURADO S.A.S.",
+    "subtitle": "Identificacion Corporativa Interna",
+    "font_size_title": 9,
+    "font_size_subtitle": 7,
+    "logo_path": ""
+  },
+  "left_fields": {
+    "x_mm": 4,
+    "y_mm": 15,
+    "line_height_mm": 5,
+    "label_font_size": 7,
+    "value_font_size": 8,
+    "fields": [
+      "nombre",
+      "apellido",
+      "cargo",
+      "id_interno",
+      "fecha",
+      "sede",
+      "observaciones"
+    ]
+  },
+  "photo": {
+    "enabled": true,
+    "x_mm": 67,
+    "y_mm": 15,
+    "w_mm": 28,
+    "h_mm": 26,
+    "border_color": "#a7b5c9"
+  },
+  "barcode": {
+    "enabled": true,
+    "x_mm": 4,
+    "y_mm": 44,
+    "w_mm": 92,
+    "h_mm": 12,
+    "font_size": 7,
+    "show_human_readable": true
+  },
+  "qr": {
+    "enabled": true,
+    "x_mm": 88,
+    "y_mm": 30,
+    "size_mm": 8
+  }
+}
